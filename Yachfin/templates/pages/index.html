@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+{% load static %}
+{%block title%}DR.Sehtal Nariman - Dental Care{%endblock title%}
+{% block content%}
+    <!-- 2. Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg">
+            <!-- Using a placeholder image for hero -->
+            <img src="{%static 'images/hero.jpeg'%}" alt="Dental Care Background" class="hero-img">
+            <div class="overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <span class="subheading">DENTAL CARE FOR</span>
+            <h1 class="hero-h1">YOUR NEW <br> SMILE</h1>
+        </div>
+
+        <!-- Overlapping Action Cards -->
+        <div class="container hero-cards-container">
+            <div class="hero-card">
+                <div class="card-icon"><i class="far fa-clock"></i></div>
+                    <div class="card-text">
+                        <h3>Working Hours</h3>
+                        <p>Sat - Thur : 8am-5pm</p>
+                    </div>
+                <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="hero-card highlight">
+                <div class="card-icon"><i class="far fa-calendar-check"></i></div>             
+                    <div  id="hero-book-now-btn"  class="card-text">
+                        <h3>Book an Appointment</h3>
+                        <p>Schedule your visit</p>
+                    </div>
+                <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <a href="tel:+213670762077" target="_blank" class="hero-card">
+                <div class="card-icon"><i class="fas fa-phone-volume"></i></div>
+                    <div class="card-text">
+                        <h3>Emergency Service</h3>
+                        <p>+2136 70 76 20 77</p>
+                    </div>
+                <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. Intro / About Section -->
+    <section class="about-section section-padding">
+        <div class="container about-grid">
+            <div class="about-image-wrapper">
+                <div class="circle-mask">
+                    <img src="{%static 'images/dentist.jpeg'%}" alt="Dentist and Patient">
+                </div>
+                <div class="dots-pattern"></div>
+            </div>
+            <div class="about-text">
+                <h2>Who We Are </h2>
+                <p>At Cabinet Yachfin, led by Dr. Sehtal Narimane, we are committed to providing advanced and reliable dental care to the community of Batna. Our clinic combines modern technology, strict hygiene standards, and patient-centered practices to ensure exceptional results in every treatment. We focus on delivering high-quality dental services, including preventive care, restorative procedures, cosmetic dentistry, and oral surgery, all with the goal of improving both your oral health and your confidence. At Yachfin, every patient receives personalized attention in a comfortable and professional environment.</p>
+                <p class="small-text">Our best-in-class dental innovation, and in particular our proceeding with an expert training program for every one of the individuals from our dental group has a noteworthy influence in achieving that objective.</p>
+                <div class="stats-section">
+                    <div class="stat-card">
+                        <h2 class="stat-card-h2">10+</h2>
+                        <p>Team Members</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h2 class="stat-card-h2">150+</h2>
+                        <p>Successful Surgery</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h2 class="stat-card-h2">100+</h2>
+                        <p>Reservation a Day</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Services Grid -->
+    <section id="services" class="services-section section-padding">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-notes-medical"></i>
+                    </div>
+                    <h3>General Dentistry</h3>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Dental Surgery</h3>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Tooth Decay</h3>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="far fa-smile-beam"></i>
+                    </div>
+                    <h3>Teeth Whitening</h3>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-teeth"></i>
+                    </div>
+                    <h3>Teeth Braces</h3>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Cosmetic Dentistry</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Our Work – Before & After Section -->
+    <section class="before-after-section section-padding bg-light">
+        <div class="ba-title">
+            <h3>Before & After Gallery</h3>
+        </div>
+        <br/>
+        <div class="container">
+            <div class="comparison-grid">
+                <div class="comparison-slider-wrapper">
+                    <!-- The 'After' Image (Background) -->
+                    <div class="image-layer after-image">
+                        <!-- Using picsum for placeholder, but simulating the name structure -->
+                        <img src="{%static 'images/after.webp'%}" alt="After Treatment">
+                        <span class="label label-after">After</span>
+                    </div>
+                    <!-- The 'Before' Image (Foreground, clipped) -->
+                    <div class="image-layer before-image" id="before-layer1">
+                        <img src="{%static 'images/before.webp'%}" alt="Before Treatment">
+                        <span class="label label-before">Before</span>
+                    </div>
+                    <!-- The Handle -->
+                    <div class="slider-handle" id="slider-handle1">
+                        <div class="handle-line"></div>
+                        <div class="handle-circle">
+                            <i class="fas fa-chevron-left"></i>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="handle-line"></div>
+                    </div>
+                    <!-- Range Input for Interaction -->
+                    <input type="range" min="0" max="100" value="50" class="slider-range" id="slider-range1">
+                </div>
+                <div class="comparison-slider-wrapper">
+                    <!-- The 'After' Image (Background) -->
+                    <div class="image-layer after-image">
+                        <!-- Using picsum for placeholder, but simulating the name structure -->
+                        <img src="{%static 'images/after1.jpg'%}" alt="After Treatment">
+                        <span class="label label-after">After</span>
+                    </div>
+                    <!-- The 'Before' Image (Foreground, clipped) -->
+                    <div class="image-layer before-image" id="before-layer2">
+                        <img src="{%static 'images/before1.jpg'%}" alt="Before Treatment">
+                        <span class="label label-before">Before</span>
+                    </div>
+                    <!-- The Handle -->
+                    <div class="slider-handle" id="slider-handle2">
+                        <div class="handle-line"></div>
+                        <div class="handle-circle">
+                            <i class="fas fa-chevron-left"></i>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="handle-line"></div>
+                    </div>
+                    <!-- Range Input for Interaction -->
+                    <input type="range" min="0" max="100" value="50" class="slider-range" id="slider-range2">
+                </div>
+                <div class="comparison-slider-wrapper">
+                    <!-- The 'After' Image (Background) -->
+                    <div class="image-layer after-image">
+                        <!-- Using picsum for placeholder, but simulating the name structure -->
+                        <img src="{%static 'images/after2.jpg'%}" alt="After Treatment">
+                        <span class="label label-after">After</span>
+                    </div>
+                    <!-- The 'Before' Image (Foreground, clipped) -->
+                    <div class="image-layer before-image" id="before-layer">
+                        <img src="{%static 'images/before2.jpg'%}" alt="Before Treatment">
+                        <span class="label label-before">Before</span>
+                    </div>
+                    <!-- The Handle -->
+                    <div class="slider-handle" id="slider-handle">
+                        <div class="handle-line"></div>
+                        <div class="handle-circle">
+                            <i class="fas fa-chevron-left"></i>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="handle-line"></div>
+                    </div>
+                    <!-- Range Input for Interaction -->
+                    <input type="range" min="0" max="100" value="50" class="slider-range" id="slider-range">
+                </div>
+                
+        </div>
+    </section>
+
+    <!-- 6. Reviews Section -->
+    <section id="reviews" class="reviews-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Our Patients' Reviews</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjXh2Qtxmlm_d7JHQd5CerwnsUsp9zL4jx2lxKK4sclnj7_ThJo=w72-h72-p-rp-mo-br100" alt="User 1">
+                        <div class="user-info">
+                            <h4>Mah Manel</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"By God, I had a toothache at night, I went to him at night and he removed the toothache and the pain subsided. God bless him, excellent work (^_^)(^-^)/( ￣▽￣)"</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://picsum.photos/60/60?random=5" alt="User 2">
+                        <div class="user-info">
+                            <h4>Dalal Hidous</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"She's the best dentist in the world, Rabbi Yahfedha. I'm terrified of dentists. When I went to her office, she reassured me and supported me in my treatment. She's very professional. Her work is magnificent. She changed my life.
+                    Rabbi Yahfedha, I wish you all the happiness in the world and good luck."</p>
+                </div>
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="user-profile">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjUy3pitKVvkvj6TlJximXatL0u5iV0PtQwhV3tjnnvtSN-Cr-c=w36-h36-p-rp-mo-br100" alt="User 3">
+                        <div class="user-info">
+                            <h4>Moumen Boulkessob</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Good luck, you deserve 10 💫 5 is little 😁 …"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 10. Our Location Section -->
+    <section class="location-section section-padding bg-light">
+        <div class="ba-title">
+            <h3>Our Location</h3>
+        </div>
+        <div class="container">
+            <div class="map-wrapper">
+                <div id="google-map"></div>
+            </div>
+        </div>
+        <div class="map-button-container" style="text-align:center; margin-top:20px;">
+            <a href="https://maps.app.goo.gl/dww87msHxGmNXqGk7" target="_blank" class="btn btn-primary">
+                Open in Google Maps
+            </a>
+        </div>
+    </section>
+
+{% endblock content%}
