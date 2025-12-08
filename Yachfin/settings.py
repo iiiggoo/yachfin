@@ -15,9 +15,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # -------------------------
 #   SECURITY
 # -------------------------
-SECRET_KEY = config('SECRET_KEY', default='unsafe-secret-key')
+SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = [config('ALLOWED_HOSTS', default='*')]
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
 # -------------------------
 #   APPLICATIONS
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
 # -------------------------
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',  # serve static files
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -73,12 +72,10 @@ WSGI_APPLICATION = 'Yachfin.wsgi.application'
 # -------------------------
 #   DATABASE
 # -------------------------
+db_url = config('DATABASE_URL')  # no default; must be set in .env
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL', default=f"sqlite:///{BASE_DIR}/db.sqlite3")
-    )
-}
-
+    'default': dj_database_url.parse(db_url, conn_max_age=600)
+    }
 # -------------------------
 #   PASSWORD VALIDATION
 # -------------------------
